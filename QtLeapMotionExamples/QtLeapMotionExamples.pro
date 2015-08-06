@@ -1,4 +1,4 @@
-#/****************************************************************************
+ #/****************************************************************************
 #**
 #** Copyright (C) Paul Lemire
 #** Contact: paul.lemire@epitech.eu
@@ -32,3 +32,6 @@ SUBDIRS = \
         LeapMouseMouseArea \
         LeapTouchMouseArea \
         LeapHandArea
+
+OTHER_FILES += QtLeapMotion_Global.pri
+

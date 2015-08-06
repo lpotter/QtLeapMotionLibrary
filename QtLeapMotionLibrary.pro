@@ -6,3 +6,4 @@ SUBDIRS = QtLeapMotion \
 
 CONFIG += ORDERED
 
+OTHER_FILES += QtLeapMotion_Global.pri

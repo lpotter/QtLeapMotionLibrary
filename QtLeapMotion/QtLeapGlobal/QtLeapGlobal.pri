@@ -55,3 +55,4 @@ INCLUDEPATH += $$PWD
 INCLUDEPATH += $$PWD/Handlers
 INCLUDEPATH += $$PWD/Qml
 INCLUDEPATH += $$PWD/Listeners
+include (../../QtLeapMotion_Global.pri)

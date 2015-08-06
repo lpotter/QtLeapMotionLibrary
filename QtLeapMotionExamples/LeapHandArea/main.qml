@@ -29,8 +29,8 @@ import QtLeapMotion 2.0
 
 Rectangle
 {
-    width : Screen.width
-    height : Screen.height
+    width : 1280
+    height :  640
     color : "dodgerblue"
 
     property int oldHandId : -1
@@ -39,14 +39,14 @@ Rectangle
     HandsMotionArea
     {
         onHandAdded: {
-
+            textLabel.text = "Hand Added"
             console.log("Hand Added")
             if (oldHandId === -1)
                 oldHandId = hand.id
         }
 
         onHandRemoved: {
-
+            textLabel.text = "hand removed"
             console.log("Hand Removed")
             if (oldHandId !== -1)
             {
@@ -57,6 +57,7 @@ Rectangle
 
         onHandUpdated : {
             console.log("Fingers" + hand.isFist);
+            textLabel.text = "Fingers" + hand.isFist
             if (oldHandId !== -1)
                 fist = hand.isFist
         }
@@ -64,6 +65,7 @@ Rectangle
 
     Text
     {
+        id: textLabel
         width : parent.width
         height : parent.height
         text : "We have a fist"

@@ -35,35 +35,4 @@ OTHER_FILES += main.qml
 RESOURCES += resources.qrc
 
 INCLUDEPATH += ../../QtLeapMotion/
-INCLUDEPATH += ../../QtLeapMotion/Leap/include
-
-
-# WORKS ONLY WITH QT COMPILED FOR MSVC
-win32: {
- !contains(QMAKE_HOST.arch, x86_64) {
-        message("x86 build")
-        message($$OUT_PWD)
-        LIBS += $$PWD/../../QtLeapMotion/Leap/x86/Leap.lib
-        LIBS += $$OUT_PWD/../../QtLeapMotion/QtLeapMotion.lib
-    } else {
-        message("x86_64 build")
-        LIBS += $$PWD/../../QtLeapMotion/Leap/x64/Leap.lib
-        LIBS += $$OUT_PWD/../../QtLeapMotion/QtLeapMotion.lib
-    }
-}
-
-linux-g++: {
-    !contains(QMAKE_HOST.arch, x86_64) {
-        LIBS += -L../../QtLeapMotion/Leap/x86/ -lLeap
-        LIBS += -L$$OUT_PWD/../../QtLeapMotion/ -lQtLeapMotion
-    } else {
-        message("x86_64 build")
-        LIBS += -L../../QtLeapMotion/Leap/x64/ -lLeap
-        LIBS += -L$$OUT_PWD/../../QtLeapMotion/ -lQtLeapMotion
-    }
-}
-
-macx{
-        LIBS += -L$$OUT_PWD/../../QtLeapMotion/ -lQtLeapMotion
-        LIBS += -L$$PWD/../../QtLeapMotion/Leap/lib -lLeap
-}
+include (../QtLeapMotionExamples_Global.pri)

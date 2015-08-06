@@ -36,47 +36,17 @@ QT += qml quick
 OBJECTS_DIR = tmp
 
 MOC_DIR = tmp
-
-INCLUDEPATH += $$PWD/Leap/include
+include (../QtLeapMotion_Global.pri)
 
 include (./QtLeapGlobal/QtLeapGlobal.pri)
 include (./QtLeapDevice/QtLeapDevice.pri)
 include (./QtLeapGestures/QtLeapGestures.pri)
 include (./QtLeapTouch/QtLeapTouch.pri)
 
-# WORKS ONLY WITH QT COMPILED FOR MSVC
-win32: {
- !contains(QMAKE_HOST.arch, x86_64) {
-        message("x86 build")
-        LIBS += $$PWD/Leap/x86/Leap.lib
-    } else {
-        message("x86_64 build")
-        LIBS += $$PWD/Leap/x64/Leap.lib
-    }
-}
-
-linux-g++: {
-    !contains(QMAKE_HOST.arch, x86_64) {
-        LIBS += -L$$PWD/Leap/x86/ -lLeap
-    } else {
-        message("x86_64 build")
-        LIBS += -L$$PWD/Leap/x64/ -lLeap
-    }
-}
-
-macx: {
-    !contains(QMAKE_HOST.arch, x86_64) {
-        LIBS += -L$$PWD/Leap/lib/ -lLeap
-    } else {
-        message("x86_64 build")
-        LIBS += -L$$PWD/Leap/lib/ -lLeap
-    }
-}
-
 
 #linux : {
 #    QMAKE_LFLAGS += -Wl,--rpath=$$PWD
-#    QMAKE_RPATH=
+##    QMAKE_RPATH=
 #}
 
 win32:DESTDIR = ./
