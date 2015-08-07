@@ -41,6 +41,7 @@ DefaultQtLeapMouseHandler::~DefaultQtLeapMouseHandler()
 
 void DefaultQtLeapMouseHandler::onInit(const Leap::Controller &controller)
 {
+    Q_UNUSED(controller)
 }
 
 void DefaultQtLeapMouseHandler::setMotionListeners(QList<QObject *> listeners)

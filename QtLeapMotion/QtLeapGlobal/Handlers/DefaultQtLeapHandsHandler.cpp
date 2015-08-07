@@ -37,6 +37,7 @@ DefaultQtLeapHandsHandler::DefaultQtLeapHandsHandler(QObject *parent) : QObject(
 
 void DefaultQtLeapHandsHandler::onInit(const Leap::Controller &controller)
 {
+    Q_UNUSED(controller)
 }
 
 void DefaultQtLeapHandsHandler::setMotionListeners(QList<QtLeapHandsListenerInterface *> listeners)

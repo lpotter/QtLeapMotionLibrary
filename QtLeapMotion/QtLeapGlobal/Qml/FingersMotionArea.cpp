@@ -37,7 +37,7 @@ FingersMotionArea::FingersMotionArea(QQuickItem *parent) :
 
 void FingersMotionArea::updateFingers(QList<QtLeapFinger *> fingersList)
 {
-
+    Q_UNUSED(fingersList)
 }
 
 } // QtLeapMotion

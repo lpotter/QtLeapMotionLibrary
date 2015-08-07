@@ -40,6 +40,7 @@ DefaultQtLeapTouchHandler::~DefaultQtLeapTouchHandler()
 
 void DefaultQtLeapTouchHandler::onInit(const Leap::Controller &controller)
 {
+    Q_UNUSED(controller)
 }
 
 void DefaultQtLeapTouchHandler::setMotionListeners(QList<QObject *> listeners)
